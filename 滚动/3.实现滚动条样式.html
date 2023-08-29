@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 3000px;
+      }
+      /* 滚动条 */
+      .styled-scrollbars::-webkit-scrollbar {
+        width: 8px; /* Mostly for vertical scrollbars */
+        height: 10px; /* Mostly for horizontal scrollbars */
+      }
+      /* 滚动滑块 */
+      .styled-scrollbars::-webkit-scrollbar-thumb {
+        /* Foreground */
+        background: black;
+        border-radius: 4px;
+      }
+      /* 滚动条两端的按钮 */
+      .styled-scrollbars::-webkit-scrollbar-button {
+        display: none;
+      }
+      /* 滚动条容器 */
+      .styled-scrollbars::-webkit-scrollbar-track {
+        background: #aaa;
+        border-radius: 4px;
+
+      }
+      .styled-scrollbars {
+        --scrollbar-foreground: yellow;
+        --scrollbar-background: #abc;
+        /* Foreground, Background */
+        scrollbar-color: var(--scrollbar-foreground) var(--scrollbar-background);
+      }
+    </style>
+  </head>
+  <body class="styled-scrollbars"></body>
+</html>

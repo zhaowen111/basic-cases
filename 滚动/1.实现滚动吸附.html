@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>CSS scroll snap(滚动吸附)</title>
+  <style>
+    html {
+      /*
+      TODO:
+      测试时发现只有设置在html元素上有效，在body上无效
+      第一个值 设置在哪个轴上进行滚动吸附 {x y both}
+      第二个值 设置滚动行为    mandatory 只能滚动到下一个吸附点   proximity  在滚动接近下一个吸附点时才吸附
+      */
+      scroll-snap-type: y mandatory;
+      /* TODO:单次滚动很远距离时是否允许滚动越过吸附点 always停在下个吸附点 normal可以跨越*/
+      scroll-snap-stop: always;
+
+      /* TODO: 设置滚动内边距*/
+      /* scroll-padding-top: 60px; */
+    }
+
+    .child {
+      /*TODO: 设置将元素吸附到视口的哪个位置  start end center none*/
+      scroll-snap-align: end;
+      /* TODO:设置单个元素的滚动外边距 避免产生吸附行为时被其他脱离文档流的元素遮挡 */
+      scroll-margin-top: 60px;
+      height: 600px;
+      background: green;
+      border: 1px solid gray;
+      margin-top: 16px;
+    }
+    .nav {
+      position: fixed;
+      height: 60px;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: red;
+    }
+    html,body {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav">Nav Bar</div>
+  <div class="child">1</div>
+  <div class="child">2</div>
+  <div class="child">3</div>
+  <div class="child">4</div>
+  <div class="child">5</div>
+  <div class="child">6</div>
+  <div class="child">7</div>
+  <div class="child">8</div>
+  <div class="child">9</div>
+  <div class="child">10</div>
+  <div class="child">11</div>
+  <div class="child">12</div>
+  <div class="child">13</div>
+  <div class="child">14</div>
+  <div class="child">15</div>
+  <div class="child">16</div>
+  <div class="child">17</div>
+  <div class="child">18</div>
+  <div class="child">19</div>
+  <div class="child">20</div>
+</body>
+
+</html>

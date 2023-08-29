@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* TODO 1.页面总宽度超过100%导致出现横向滚动 */
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        /* TODO: 2.HTML元素原来的宽度是自适应的，改成100vw时加上垂直的
+        滚动条就会导致水平宽度溢出，删掉这一条可以修复*/
+        width: 100vw;
+      }
+      .child {
+        height: 300px;
+        background: #000;
+        margin-top: 16px;
+        color: white;
+        text-align: right;
+      }
+
+      /* TODO 3. 通过隐藏滚动条来修复*/
+      /* body::-webkit-scrollbar {
+        display: none;
+      } */
+
+      body::-webkit-scrollbar {
+        opacity: 0.3;
+      }
+      /* TODO 4.通过设置水平溢出隐藏也可以解决这个问题，但是水平内容会显示不全 */
+      /* html {
+        overflow-x: hidden;
+      } */
+
+      /* TODO:5.给html设置水平溢出隐藏 然后给页面的容器设置右边距=滚动条宽度 这种方法在滚动条不存在时就非常尴尬了。。*/
+      /* html {
+        overflow-x: hidden;
+      }
+      :root .container {
+        margin-right: 16px;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="child">111</div>
+      <div
+        class="child"
+        style="text-align: left">
+        111
+      </div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+    </div>
+  </body>
+</html>
